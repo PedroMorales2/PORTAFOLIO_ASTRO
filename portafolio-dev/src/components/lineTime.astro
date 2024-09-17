@@ -1,0 +1,47 @@
+---
+import LinteTimeItem from "./linteTimeItem.astro";
+
+const EXPERIENCE = [
+  
+    {
+      titulo: "Ingreso a la universidad",
+      compañia: "Universidad Santo Toribio de Mogrovejo (USAT)",
+      localizacion: "Chiclayo, Lambayeque, Perú",
+      fecha: "03 de Marzo del 2020",
+      imagen:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPwv7P2oPILd9TllMlBx-gK8MMn2XfEHmjdw&s",
+      descripcion:
+        "Ingresé a la carrera de Ingeniería de Sistemas en la USAT, donde comencé a desarrollar mis habilidades técnicas en diversas áreas de la computación.",
+    },
+    {
+      titulo: "Curso de HTML",
+      compañia: "USAT",
+      fecha: "03 de Marzo del 2021",
+      imagen:
+        "https://kinsta.com/wp-content/uploads/2021/03/HTML-5-Badge-Logo.png",
+      descripcion:
+        "Cursé HTML en la USAT, adquiriendo una base sólida en la creación de sitios web estáticos y en la estructura del contenido para la web.",
+    },
+    {
+      titulo: "Curso de CSS",
+      compañia: "USAT",
+      fecha: "03 de Marzo del 2022",
+      imagen:
+        "https://www.pngitem.com/pimgs/m/198-1985011_css3-png-css-logo-png-transparent-png.png",
+      descripcion:
+        "Completé el curso de CSS, donde aprendí a diseñar y estilizar interfaces web atractivas y responsivas, utilizando herramientas avanzadas de diseño.",
+    },
+    
+  
+];
+---
+
+<ol class="relative border-s border-gray-200 dark:border-gray-700">
+  {
+    EXPERIENCE.map((experience) => (
+      <li class="mb-10 ms-6">
+        <LinteTimeItem {...experience} />
+      </li>
+    ))
+  }
+</ol>
