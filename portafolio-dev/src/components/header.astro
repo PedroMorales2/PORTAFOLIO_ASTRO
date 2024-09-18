@@ -1,14 +1,27 @@
 <header class="sticky top-0 bg-gray-900 shadow-md z-50 w-full py-5">
   <!-- Logo or Brand -->
-  <div class="flex justify-between items-center w-full xl:w-[1120px] mx-auto px-4 lg:px-0">
-    <span class="text-2xl font-bold text-white">
-      MiPortfolio
-    </span>
+  <div
+    class="flex justify-between items-center w-full xl:w-[1120px] mx-auto px-4 lg:px-0"
+  >
+    <span class="text-2xl font-bold text-white"> MiPortfolio </span>
 
     <!-- Botón de menú para pantallas pequeñas -->
-    <button id="menu-btn" class="block md:hidden text-gray-300 focus:outline-none">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16m-7 6h7" />
+    <button
+      id="menu-btn"
+      class="block md:hidden text-gray-300 focus:outline-none"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-6 w-6"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+        stroke-width="2"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M4 6h16M4 12h16m-7 6h7"></path>
       </svg>
     </button>
 
@@ -16,60 +29,97 @@
     <nav id="menu" class="hidden md:flex">
       <ul class="flex flex-row gap-x-10 text-white">
         <li>
-          <a href="/#top" class="text-lg font-medium hover:text-yellow-400 transition duration-300 ease-in-out">INICIO</a>
+          <a
+            href="/#top"
+            class="text-lg font-medium hover:text-yellow-400 transition duration-300 ease-in-out"
+            >INICIO</a
+          >
         </li>
         <li>
-          <a href="/#experiencia" class="text-lg font-medium hover:text-yellow-400 transition duration-300 ease-in-out">EXPERIENCIA</a>
+          <a
+            href="/#experiencia"
+            class="text-lg font-medium hover:text-yellow-400 transition duration-300 ease-in-out"
+            >EXPERIENCIA</a
+          >
         </li>
         <li>
-          <a href="/#proyecto" class="text-lg font-medium hover:text-yellow-400 transition duration-300 ease-in-out">PROYECTOS</a>
+          <a
+            href="/#proyecto"
+            class="text-lg font-medium hover:text-yellow-400 transition duration-300 ease-in-out"
+            >PROYECTOS</a
+          >
         </li>
         <li>
-          <a href="https://wa.link/etukyu" target="_blank" class="text-lg font-medium hover:text-yellow-400 transition duration-300 ease-in-out">CONTACTO</a>
+          <a
+            href="https://wa.link/etukyu"
+            target="_blank"
+            class="text-lg font-medium hover:text-yellow-400 transition duration-300 ease-in-out"
+            >CONTACTO</a
+          >
         </li>
       </ul>
     </nav>
   </div>
 
   <!-- Menú móvil -->
-  <div id="mobile-menu" class="hidden md:hidden absolute top-16 left-0 w-full bg-gray-900 text-white py-4 px-6 rounded-lg z-50">
+  <div
+    id="mobile-menu"
+    class="hidden md:hidden absolute top-16 left-0 w-full bg-gray-900 text-white py-4 px-6 rounded-lg z-50"
+  >
     <ul class="flex flex-col gap-y-4 text-center">
       <li>
-        <a href="/#top" class="text-lg font-medium hover:text-yellow-400 transition duration-300 ease-in-out">INICIO</a>
+        <a
+          href="/#top"
+          class="text-lg font-medium hover:text-yellow-400 transition duration-300 ease-in-out"
+          >INICIO</a
+        >
       </li>
       <li>
-        <a href="/#experiencia" class="text-lg font-medium hover:text-yellow-400 transition duration-300 ease-in-out">EXPERIENCIA</a>
+        <a
+          href="/#experiencia"
+          class="text-lg font-medium hover:text-yellow-400 transition duration-300 ease-in-out"
+          >EXPERIENCIA</a
+        >
       </li>
       <li>
-        <a href="/#proyecto" class="text-lg font-medium hover:text-yellow-400 transition duration-300 ease-in-out">PROYECTOS</a>
+        <a
+          href="/#proyecto"
+          class="text-lg font-medium hover:text-yellow-400 transition duration-300 ease-in-out"
+          >PROYECTOS</a
+        >
       </li>
       <li>
-        <a href="https://wa.link/etukyu" target="_blank" class="text-lg font-medium hover:text-yellow-400 transition duration-300 ease-in-out">CONTACTO</a>
+        <a
+          href="https://wa.link/etukyu"
+          target="_blank"
+          class="text-lg font-medium hover:text-yellow-400 transition duration-300 ease-in-out"
+          >CONTACTO</a
+        >
       </li>
     </ul>
   </div>
 </header>
 
 <script>
-  const menuBtn = document.getElementById('menu-btn');
-  const mobileMenu = document.getElementById('mobile-menu');
-  const menuLinks = document.querySelectorAll('#mobile-menu a'); // Seleccionamos los enlaces del menú móvil
+  const menuBtn = document.getElementById("menu-btn");
+  const mobileMenu = document.getElementById("mobile-menu");
+  const menuLinks = document.querySelectorAll("#mobile-menu a"); // Seleccionamos los enlaces del menú móvil
 
   if (menuBtn && mobileMenu) {
     // Si el botón de menú y el menú móvil existen, entonces ejecutamos el código
+    menuBtn.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+    });
+
+    // Cerrar el menú móvil cuando se selecciona una opción
+    menuLinks.forEach((link) => {
+      link.addEventListener("click", () => {
+        mobileMenu.classList.add("hidden"); // Ocultar el menú móvil después de hacer clic
+      });
+    });
   } else {
     // Si no existen, entonces no ejecutamos el código
-    throw new Error('No se encontró el botón de menú o el menú móvil');
+    throw new Error("No se encontró el botón de menú o el menú móvil");
   }
   // Toggle para abrir/cerrar el menú móvil
-  menuBtn.addEventListener('click', () => {
-    mobileMenu.classList.toggle('hidden');
-  });
-
-  // Cerrar el menú móvil cuando se selecciona una opción
-  menuLinks.forEach(link => {
-    link.addEventListener('click', () => {
-      mobileMenu.classList.add('hidden'); // Ocultar el menú móvil después de hacer clic
-    });
-  });
 </script>
