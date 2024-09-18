@@ -3,16 +3,16 @@ const { titulo, compañia, localizacion, fecha, descripcion, imagen } = Astro.pr
 ---
 
 <span
-  class="absolute flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full -start-3 ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900"
+  class="absolute flex items-center justify-center w-10 h-10 bg-blue-100 rounded-full -start-3 ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900"
 >
   <img
-    class="rounded-full shadow-lg"
+    class="rounded-full shadow-xl"
     src= {imagen}
     alt="Bonnie image"
   />
 </span>
 <div
-  class="relative flex flex-col gap-y-2 border-gray-200 dark:border-gray-700 pl-2 py-4"
+  class="relative flex flex-col gap-y-2 border-gray-200 dark:border-gray-700 pl-8 py-4"
 >
   
   
@@ -34,7 +34,7 @@ const { titulo, compañia, localizacion, fecha, descripcion, imagen } = Astro.pr
 
     {
         descripcion && (
-            <div class="p-3 text-xs italic font-normal text-gray-500 border border-gray-200 rounded-lg bg-gray-50 dark:bg-gray-600 dark:border-gray-500 dark:text-gray-300 mt-2 text-pretty">{descripcion}</div>
+            <div class="p-3 text-xs italic font-normal text-gray-500 border border-gray-200 rounded-lg bg-gray-50 dark:bg-gray-600 dark:border-gray-500 dark:text-gray-300 mt-2 text-pretty max-w-[38rem]">{descripcion}</div>
         )
     }
 
