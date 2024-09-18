@@ -5,12 +5,14 @@
       MiPortfolio
     </span>
 
+
     <!-- Botón de menú para pantallas pequeñas -->
     <button id="menu-btn" class="block md:hidden text-gray-300 focus:outline-none">
       <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
         <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16m-7 6h7" />
       </svg>
     </button>
+
 
     <!-- Navigation -->
     <nav id="menu" class="hidden md:flex">
@@ -55,12 +57,14 @@
   const mobileMenu = document.getElementById('mobile-menu');
   const menuLinks = document.querySelectorAll('#mobile-menu a'); // Seleccionamos los enlaces del menú móvil
 
+
   if (menuBtn && mobileMenu) {
     // Si el botón de menú y el menú móvil existen, entonces ejecutamos el código
   } else {
     // Si no existen, entonces no ejecutamos el código
     throw new Error('No se encontró el botón de menú o el menú móvil');
   }
+
   // Toggle para abrir/cerrar el menú móvil
   menuBtn.addEventListener('click', () => {
     mobileMenu.classList.toggle('hidden');
