@@ -1,0 +1,84 @@
+---
+import NextJs from "../icons/next.astro";
+import Html from "../icons/html.astro";
+import Flask from "../icons/flask.astro";
+import Github from "../icons/github.astro";
+const TAGS = {
+  NEXT: {
+    name: "Next.js",
+    color: "bg-black text-white ",
+    icon: NextJs,
+  },
+  HTML: {
+    name: "HTML",
+    color: "bg-white text-blue-500",
+    icon: Html,
+  },
+  FLASK: {
+    name: "Flask",
+    color: "bg-black text-white",
+    icon: Flask,
+  },
+};
+const PROJECTS = [
+  {
+    title: "Proyecto de compra y venta de ropa",
+    description:
+      "Fue elaborado el año 2024 en el curso llamada desarrollo de aplicaciones web, en el cual se utilizo flask",
+    link: "https://pedro13morales17.pythonanywhere.com/index",
+    github: "https://github.com/PedroMorales2/DAW",
+    imageConfig: "/projects/primera_imagen.jpg",
+    tags: [TAGS.HTML, TAGS.FLASK],
+  },
+];
+---
+
+{
+  PROJECTS.map((project) => (
+    <article class="hover:scale-100 transition">
+      <div class="flex items-center space-x-10">
+        <h3 class="text-2xl font-semibold text-yellow-200 mb-2">
+          {project.title}
+        </h3>
+        <a
+          href={project.link}
+          target="_blank"
+          class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-500 to-pink-500 group-hover:from-purple-500 group-hover:to-pink-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800"
+        >
+          <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+            IR =>
+          </span>
+        </a>
+      </div>
+      <p class="text-lg mb-4 text-pretty">{project.description}</p>
+      <div class="flex items-center space-x-1 my-2">
+        <h3>SUBIDO EN:</h3>
+        <a
+          href={project.github}
+          target="_blank"
+          class="w-[50px] h-[50px] rounded-full bg-white dark:bg-gray-900 flex items-center justify-center shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 ease-in-out transform"
+        >
+          <Github class="size-5 text-center" />
+        </a>
+      </div>
+      <ul class="flex gap-x-2 flex-row">
+        {project.tags.map((tag) => (
+          <li>
+            <span
+              class={`flex gap-x-2 rounded-full text-xs  ${tag.color} py-2 px-1`}
+            >
+              <tag.icon class="size-5 text-center" />
+
+              {tag.name}
+            </span>
+          </li>
+        ))}
+      </ul>
+      <img
+        class="rounded shadow-2xl shadow-white/10 mt-5"
+        src={project.imageConfig}
+        alt={`Captura de pantalla`}
+      />
+    </article>
+  ))
+}

@@ -1,5 +1,23 @@
-<span
-  class="bg-blue-100 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300 hover:scale-110 transition"
->
-  <slot />
+<span class="relative inline-block text-blue-500 font-medium px-3 py-1.5 rounded transition-all duration-300 ease-in-out hover:bg-blue-500 hover:text-white hover:scale-110 dark:text-blue-300 dark:hover:bg-blue-300 dark:hover:text-black">
+  <span class="absolute inset-0 rounded border border-blue-500 dark:border-blue-300 animate-border-move"></span>
+  <span class="relative z-10">
+    <slot />
+  </span>
 </span>
+
+<style>
+  @keyframes borderMove {
+    0% {
+      background-position: 0% 50%;
+    }
+    100% {
+      background-position: 200% 50%;
+    }
+  }
+
+  .animate-border-move {
+    background: linear-gradient(90deg, rgba(0, 150, 255, 0.7), rgba(255, 255, 255, 0), rgba(0, 150, 255, 0.7));
+    background-size: 200% 200%;
+    animation: borderMove 3s linear infinite;
+  }
+</style>
