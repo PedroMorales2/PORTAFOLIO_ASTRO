@@ -107,16 +107,7 @@
 
   if (menuBtn && mobileMenu) {
     // Si el botón de menú y el menú móvil existen, entonces ejecutamos el código
-    menuBtn.addEventListener("click", () => {
-      mobileMenu.classList.toggle("hidden");
-    });
-
-    // Cerrar el menú móvil cuando se selecciona una opción
-    menuLinks.forEach((link) => {
-      link.addEventListener("click", () => {
-        mobileMenu.classList.add("hidden"); // Ocultar el menú móvil después de hacer clic
-      });
-    });
+   
   } else {
     // Si no existen, entonces no ejecutamos el código
     throw new Error("No se encontró el botón de menú o el menú móvil");
