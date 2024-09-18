@@ -55,7 +55,12 @@
   const mobileMenu = document.getElementById('mobile-menu');
   const menuLinks = document.querySelectorAll('#mobile-menu a'); // Seleccionamos los enlaces del menú móvil
 
-  
+  if (menuBtn && mobileMenu) {
+    // Si el botón de menú y el menú móvil existen, entonces ejecutamos el código
+  } else {
+    // Si no existen, entonces no ejecutamos el código
+    throw new Error('No se encontró el botón de menú o el menú móvil');
+  }
   // Toggle para abrir/cerrar el menú móvil
   menuBtn.addEventListener('click', () => {
     mobileMenu.classList.toggle('hidden');
