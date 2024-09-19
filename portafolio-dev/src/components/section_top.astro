@@ -1,0 +1,57 @@
+---
+import Card from "../components/Card.astro";
+import Badge from "../components/Badge.astro";
+import LinkedinIcon from "../icons/linkedin.astro";
+import SocialPill from "../components/socialPill.astro";
+import GithubIcon from "../icons/github.astro";
+import GmailIcon from "../icons/gmail.astro";
+import SectionContainer from "../components/SectionContainer.astro";
+
+---
+<SectionContainer class="py-20 pb-24 " id="top" transition:name="media-player" transition:persist>
+  <div class="flex items-center space-x-5">
+    <img
+      class="rounded-full size-20 h-20 mb-4"
+      src="/foto.jpg"
+      alt="Imagen pedro morales serrato"
+    />
+    <a
+      href="https://www.linkedin.com/in/pedro-morales-568a62300/"
+      target="_blank"
+      rel="noopener"
+      class=""
+    >
+      <Badge>Disponible para trabajar </Badge>
+    </a>
+  </div>
+  <h1
+    class="text-white text-2xl lg:text-5xl md:text-4xl font-bold flex flex-row gap-x-4 pb-4 lg:pb-10"
+  >
+    Hola, soy Pedro
+  </h1>
+  <h2 class="text-xl lg:text-2xl text-wrap max-w-[700px]">
+    <span class="text-yellow-200">+2 años de experiencia.</span><span
+      class="opacity-80"
+    >
+      Desarrollador web, soy de Perú Lorem ipsum dolor sit amet consectetur
+      adipisicing elit. Voluptatibus, iusto saepe rerum</span
+    >
+  </h2>
+
+  <nav class="flex gap-4 mt-8 flex-wrap">
+    <SocialPill href="https://www.linkedin.com/in/pedro-morales-568a62300/">
+      <LinkedinIcon class="size-4 md:size-6" />
+      Linkedin
+    </SocialPill>
+
+    <SocialPill href="https://github.com/PedroMorales2">
+      <GithubIcon class="size-4 md:size-6" />
+      Github
+    </SocialPill>
+
+    <SocialPill href="mailto:electronico4208978@gmail.com">
+      <GmailIcon class="size-4 md:size-6" />
+      electronico4208978@gmail.com
+    </SocialPill>
+  </nav>
+</SectionContainer>

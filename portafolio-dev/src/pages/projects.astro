@@ -1,0 +1,161 @@
+---
+import Layout from "../layouts/Layout.astro";
+import SectionContainer from "../components/SectionContainer.astro";
+import CardProject from "../components/cardProject.astro";
+import NextJs from "../icons/next.astro";
+import Html from "../icons/html.astro";
+import Flask from "../icons/flask.astro";
+import Cisco from "../icons/cisco.astro";
+import Python from "../icons/python.astro";
+import JavaScript from "../icons/javascript.astro";
+import Css from "../icons/css.astro";
+import React from "../icons/React.astro";
+import Astro from "../icons/as.astro";
+import Tai from "../icons/tai.astro";
+import Windows from "../icons/winServer.astro";
+import Linux from "../icons/linux.astro";
+import Mysql from "../icons/mysql.astro";
+import Postgresql from "../icons/postgresql.astro";
+import Git from "../icons/git.astro";
+import Github from "../icons/github.astro";
+import Bi from "../icons/bi.astro";
+
+const TAGS = {
+  NEXT: {
+    name: "Next.js",
+    color: "bg-black text-white",
+    icon: NextJs, // Cambiado a 'icon'
+  },
+  HTML: {
+    name: "HTML",
+    color: "bg-white text-blue-500",
+    icon: Html,
+  },
+  FLASK: {
+    name: "Flask",
+    color: "bg-black text-white",
+    icon: Flask,
+  },
+  CISCO: {
+    name: "Cisco",
+    color: "bg-blue-500 text-white",
+    icon: Cisco,
+  },
+  PYTHON: {
+    name: "Python",
+    color: "bg-yellow-500 text-white",
+    icon: Python,
+  },
+  JAVASCRIPT: {
+    name: "JavaScript",
+    color: "bg-yellow-500 text-white",
+    icon: JavaScript,
+  },
+  CSS: {
+    name: "CSS",
+    color: "bg-blue-500 text-white",
+    icon: Css,
+  },
+  REACT: {
+    name: "React",
+    color: "bg-blue-500 text-white",
+    icon: React,
+  },
+  ASTRO: {
+    name: "Astro",
+    color: "bg-blue-500 text-white",
+    icon: Astro,
+  },
+  TAILWIND: {
+    name: "Tailwind",
+    color: "bg-blue-500 text-white",
+    icon: Tai,
+  },
+  WINSER : {
+    name: "Windows Server",
+    color: "bg-blue-500 text-white",
+    icon: Windows,
+  },
+  LINUX: {
+    name: "Linux",
+    color: "bg-blue-500 text-white",
+    icon: Linux,
+  },
+  MYSQL: {
+    name: "MySQL",
+    color: "bg-blue-500 text-white",
+    icon: Mysql,
+  },
+  POSTGRESQL : {
+    name: "PostgreSQL",
+    color: "bg-blue-500 text-white",
+    icon: Postgresql,
+  },
+  POWERBI: {
+    name: "PowerBI",
+    color: "bg-blue-500 text-white",
+    icon: Bi,
+  },
+  IA : {
+    name: "Inteligencia Artificial",
+    color: "bg-blue-500 text-white",
+    icon: "",
+  },
+  GIT: {
+    name: "Git",
+    color: "bg-blue-500 text-white",
+    icon: Git,
+  },
+  GITHUB: {
+    name: "GitHub",
+    color: "bg-blue-500 text-white",
+    icon: Github,
+  },
+  
+};
+
+const PROYECTOS = [
+  {
+    titulo: "Proyecto de compra y venta de ropa",
+    descripcion:
+      "Fue elaborado el año 2024 en el curso llamada desarrollo de aplicaciones web, en el cual se utilizo flask",
+    imagen: "/projects/primera_imagen.jpg",
+    github: "https://github.com/PedroMorales2/DAW",
+    linkPages: "https://pedro13morales17.pythonanywhere.com/index",
+    adicional: [TAGS.HTML, TAGS.FLASK, TAGS.MYSQL, TAGS.JAVASCRIPT, TAGS.CSS, TAGS.GITHUB],
+  },
+  {
+    titulo: "Proyecto de compra y venta de ropa",
+    descripcion:
+      "Fue elaborado el año 2024 en el curso llamada desarrollo de aplicaciones web, en el cual se utilizo flask",
+    imagen: "/projects/primera_imagen.jpg",
+    github: "https://github.com/PedroMorales2/DAW",
+    linkPages: "https://pedro13morales17.pythonanywhere.com/index",
+    adicional: [TAGS.HTML, TAGS.FLASK],
+  },
+  {
+    titulo: "PRUEBA",
+    descripcion: "PRUEBASSSSSSSSSSSSSSSS",
+    imagen: "",
+    github: "",
+    linkPages: "",
+    adicional: "",
+  },
+];
+---
+
+<Layout title="Bievenido a mi PORTAFOLIO.">
+  <main class="px-4">
+    <SectionContainer>
+      <div
+        class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2"
+      >
+        {
+          PROYECTOS.map((proyecto, index) => (
+            <CardProject key={index} {...proyecto} />
+          ))
+        }
+      </div>
+    </SectionContainer>
+  </main>
+</Layout>
