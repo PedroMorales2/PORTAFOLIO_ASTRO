@@ -1,0 +1,116 @@
+---
+import Github from "../icons/github.astro";
+import Www from "../icons/www.astro";
+const { titulo, descripcion, imagen, github, linkPages, adicional } =
+  Astro.props;
+---
+
+<div class="flex items-center space-x-5">
+  <div
+    class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
+  >
+    <img class="rounded-t-lg" src={imagen} alt="" />
+
+    <div class="p-5">
+      <h5
+        class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
+      >
+        {titulo}
+      </h5>
+
+      <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+        {descripcion}
+      </p>
+      <div class="text-center mt-5">
+        <a
+          href={github}
+          target="_blank"
+          class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-slate-500 rounded-lg hover:bg-slate-500/40 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-slate-500 dark:hover:bg-slate-500/90 dark:focus:ring-slate-500/40"
+        >
+          <Github class="size-5" />
+
+          <svg
+            class="rtl:rotate-180 w-3.5 h-3.5 ms-2"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 14 10"
+          >
+            <path
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M1 5h12m0 0L9 1m4 4L9 9"></path>
+          </svg>
+          &nbsp; GITHUB
+        </a>
+
+        {
+          linkPages ? (
+            <a
+              href={linkPages}
+              target="_blank"
+              class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-slate-100 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-fuchsia-800 dark:hover:bg-fuchsia-800/90 dark:focus:ring-green-500"
+            >
+              <Www class="size-5" /> 
+              <svg
+                class="rtl:rotate-180 w-3.5 h-3.5 ms-2"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 14 10"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M1 5h12m0 0L9 1m4 4L9 9"
+                />
+                
+              </svg>
+
+               &nbsp; PAGINA
+            </a>
+          ) : (
+            <span
+              id="badge-dismiss-yellow"
+              class="inline-flex items-center px-2 py-2 me-2 my-3 text-sm font-medium text-yellow-800 bg-yellow-100 rounded dark:bg-yellow-900 dark:text-yellow-300"
+            >
+              PAGINA NO DISPONIBLE 😢
+              <button
+                type="button"
+                class="inline-flex items-center p-1 ms-2 text-sm text-yellow-400 bg-transparent rounded-sm hover:bg-yellow-200 hover:text-yellow-900 dark:hover:bg-yellow-800 dark:hover:text-yellow-300"
+                data-dismiss-target="#badge-dismiss-yellow"
+                aria-label="Remove"
+              >
+                <span class="sr-only">Remove badge</span>
+              </button>
+            </span>
+          )
+        }
+      </div>
+
+      <ul class="flex flex-wrap gap-x-2 gap-y-2 py-6">
+        {
+          Array.isArray(adicional) && adicional.length > 0 ? (
+            adicional.map((ad) => (
+              <li>
+                <span
+                  class={`flex gap-x-2 rounded-full text-xs ${ad.color} py-2 px-1`}
+                >
+                  <ad.icon class="w-5 h-5 text-center" />
+                  {ad.name}
+                </span>
+              </li>
+            ))
+          ) : (
+            <h1>Proceso....</h1>
+          )
+        }
+      </ul>
+      
+    </div>
+  </div>
+</div>
