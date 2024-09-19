@@ -1,82 +1,13 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Card from "../components/Card.astro";
-import Badge from "../components/Badge.astro";
-import LinkedinIcon from "../icons/linkedin.astro";
-import SocialPill from "../components/socialPill.astro";
-import GithubIcon from "../icons/github.astro";
-import GmailIcon from "../icons/gmail.astro";
-import SectionContainer from "../components/SectionContainer.astro";
-import LineTime from "../components/lineTime.astro";
-import Work from "../icons/work.astro";
-import Github from "../icons/github.astro";
-import Project from "../icons/project.astro";
-import Projects from "../components/projects.astro";
+import SectionExperience from "../components/section-experience.astro";
+import SectionProyecto from "../components/section-proyecto.astro";
 ---
 
 <Layout title="Bievenido a mi PORTAFOLIO.">
   <main class="px-4">
-    <SectionContainer class="py-20 pb-24" id="top">
-      <div class="flex items-center space-x-5">
+    <SectionExperience />
 
-        <img
-        class="rounded-full w-12 h-12 mb-4"
-        src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/ae063fd2-1eca-48aa-894c-45d786e854a7/dbj4nrb-5c96ea39-8d40-43f5-83f8-f1f2756d7626.jpg/v1/fit/w_800,h_973,q_70,strp/morty_malvado__rick_y_morty__by_nataly2_dbj4nrb-414w-2x.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9OTczIiwicGF0aCI6IlwvZlwvYWUwNjNmZDItMWVjYS00OGFhLTg5NGMtNDVkNzg2ZTg1NGE3XC9kYmo0bnJiLTVjOTZlYTM5LThkNDAtNDNmNS04M2Y4LWYxZjI3NTZkNzYyNi5qcGciLCJ3aWR0aCI6Ijw9ODAwIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.xds2OfMMiElwuGcTWcPiiJnBwTxNdxKaHXgQ0olwefA"
-        alt="Imagen pedro morales serrato"
-        />
-        <a
-        href="https://www.linkedin.com/in/pedro-morales-568a62300/"
-        target="_blank"
-        rel="noopener"
-        class=""
-        >
-        <Badge>Disponible para trabajar</Badge>
-      </a>
-    </div>
-      <h1
-        class="text-white text-2xl lg:text-5xl md:text-4xl font-bold flex flex-row gap-x-4 pb-4 lg:pb-10"
-      >
-        Hola, soy Pedro
-      </h1>
-      <h2 class="text-xl lg:text-2xl text-wrap max-w-[700px]">
-        <span class="text-yellow-200">+2 años de experiencia.</span><span
-          class="opacity-80"
-        >
-          Desarrollador web, soy de Perú Lorem ipsum dolor sit amet consectetur
-          adipisicing elit. Voluptatibus, iusto saepe rerum</span
-        >
-      </h2>
-
-      <nav class="flex gap-4 mt-8 flex-wrap">
-        <SocialPill href="https://www.linkedin.com/in/pedro-morales-568a62300/">
-          <LinkedinIcon class="size-4 md:size-6" />
-          Linkedin
-        </SocialPill>
-
-        <SocialPill href="https://github.com/PedroMorales2">
-          <GithubIcon class="size-4 md:size-6" />
-          Github
-        </SocialPill>
-
-        <SocialPill href="mailto:electronico4208978@gmail.com">
-          <GmailIcon class="size-4 md:size-6" />
-          electronico4208978@gmail.com
-        </SocialPill>
-      </nav>
-    </SectionContainer>
-
-    <SectionContainer id="experiencia">
-      <h2 class="text-2xl font-semibold mb-6 flex gap-x-3 items-center">
-        <Work class="size-19" /> Experiencia laboral
-      </h2>
-      <LineTime />
-    </SectionContainer>
-
-    <SectionContainer id="proyecto">
-      <h2 class="text-2xl font-semibold mb-6 flex gap-x-3 items-center">
-        <Project class="size-19" /> PROYECTOS
-      </h2>
-      <Projects />
-    </SectionContainer>
+    <SectionProyecto />
   </main>
 </Layout>
