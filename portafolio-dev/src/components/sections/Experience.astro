@@ -1,0 +1,176 @@
+---
+import SectionHeading from "@/components/ui/SectionHeading.astro";
+import { EXPERIENCE } from "@/data/experience";
+import { CERTIFICATIONS, RECOGNITIONS } from "@/data/certifications";
+import { MapPin, Award, Trophy, Github, FileCheck } from "lucide-react";
+---
+
+<section id="trayectoria" class="relative py-28 md:py-36">
+  <div class="container-x">
+    <SectionHeading
+      eyebrow="Trayectoria"
+      title="Experiencia que se verifica."
+      description="Roles profesionales con constancias oficiales, formación universitaria y certificaciones — en orden cronológico inverso."
+    />
+
+    <div class="relative mt-20 max-w-3xl">
+      <!-- Línea que se dibuja con el scroll -->
+      <div class="absolute bottom-2 left-[7px] top-2 w-px bg-line-soft" aria-hidden="true">
+        <div data-timeline-line class="h-full w-full origin-top bg-gradient-to-b from-accent to-teal">
+        </div>
+      </div>
+
+      <ol class="space-y-14">
+        {
+          EXPERIENCE.map((item) => (
+            <li class="relative pl-12" data-reveal>
+              <span
+                class:list={[
+                  "absolute left-0 top-1.5 flex size-[15px] items-center justify-center rounded-full border-2",
+                  item.todo ? "border-faint bg-void" : "border-accent bg-void",
+                ]}
+                aria-hidden="true"
+              >
+                {!item.todo && <span class="size-[5px] rounded-full bg-accent" />}
+              </span>
+
+              <article
+                class:list={[
+                  item.todo &&
+                    "rounded-xl border border-dashed border-line p-5 opacity-70",
+                ]}
+              >
+                <p class="font-mono text-[0.7rem] uppercase tracking-[0.22em] text-accent">
+                  {item.period}
+                </p>
+                <h3 class="font-display mt-2 text-xl font-bold tracking-tight md:text-2xl">
+                  {item.title}
+                </h3>
+                <p class="mt-1 text-sm font-medium text-muted">
+                  {item.org}
+                  {item.location && (
+                    <span class="ml-2 inline-flex items-center gap-1 text-faint">
+                      <MapPin size={12} aria-hidden="true" />
+                      {item.location}
+                    </span>
+                  )}
+                </p>
+                <p class="mt-3 max-w-xl leading-relaxed text-muted text-pretty">{item.description}</p>
+                {item.tags && (
+                  <ul class="mt-4 flex flex-wrap gap-2" role="list">
+                    {item.tags.map((tag) => (
+                      <li class="chip !py-1.5 !text-[0.72rem]">{tag}</li>
+                    ))}
+                  </ul>
+                )}
+                {item.credential && (
+                  <a
+                    href={item.credential}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="mt-4 inline-flex items-center gap-1.5 text-xs font-medium text-accent transition-colors hover:text-ink"
+                  >
+                    <FileCheck size={13} aria-hidden="true" /> Ver constancia
+                  </a>
+                )}
+              </article>
+            </li>
+          ))
+        }
+      </ol>
+    </div>
+
+    <!-- Certificaciones y reconocimientos -->
+    <div class="mt-24 grid gap-12 lg:grid-cols-2 lg:gap-16">
+      <div data-reveal>
+        <h3 class="eyebrow">
+          <Award size={14} aria-hidden="true" />
+          Certificaciones
+        </h3>
+        <ul class="mt-6 space-y-5" data-stagger>
+          {
+            CERTIFICATIONS.map((cert) => (
+              <li
+                class:list={[
+                  "border-l-2 pl-5",
+                  cert.todo ? "border-dashed border-line opacity-70" : "border-line",
+                ]}
+                data-stagger-item
+              >
+                <p class="text-[0.95rem] font-semibold leading-snug text-ink text-balance">
+                  {cert.title}
+                </p>
+                <p class="mt-1 text-sm text-muted">{cert.org}</p>
+                <p class="mt-1 font-mono text-[0.68rem] uppercase tracking-[0.18em] text-faint">
+                  {cert.date}
+                  {cert.detail && <span class="normal-case tracking-normal"> · {cert.detail}</span>}
+                </p>
+                {cert.credential && (
+                  <a
+                    href={cert.credential}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="mt-2 inline-flex items-center gap-1.5 text-xs font-medium text-accent transition-colors hover:text-ink"
+                  >
+                    <FileCheck size={12} aria-hidden="true" /> Ver certificado
+                  </a>
+                )}
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+
+      <div data-reveal>
+        <h3 class="eyebrow">
+          <Trophy size={14} aria-hidden="true" />
+          Reconocimientos
+        </h3>
+        <ul class="mt-6 space-y-5" data-stagger>
+          {
+            RECOGNITIONS.map((item) => (
+              <li
+                class:list={[
+                  "border-l-2 pl-5",
+                  item.todo ? "border-dashed border-line opacity-70" : "border-line",
+                ]}
+                data-stagger-item
+              >
+                <p class="text-[0.95rem] font-semibold leading-snug text-ink text-balance">
+                  {item.title}
+                </p>
+                <p class="mt-1 text-sm text-muted">{item.org}</p>
+                <p class="mt-1 font-mono text-[0.68rem] uppercase tracking-[0.18em] text-faint">
+                  {item.date}
+                  {item.detail && <span class="normal-case tracking-normal"> · {item.detail}</span>}
+                </p>
+                <span class="flex flex-wrap gap-x-4">
+                  {item.credential && (
+                    <a
+                      href={item.credential}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="mt-2 inline-flex items-center gap-1.5 text-xs font-medium text-accent transition-colors hover:text-ink"
+                    >
+                      <FileCheck size={12} aria-hidden="true" /> Ver certificado
+                    </a>
+                  )}
+                  {item.link && (
+                    <a
+                      href={item.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="mt-2 inline-flex items-center gap-1.5 text-xs font-medium text-accent transition-colors hover:text-ink"
+                    >
+                      <Github size={12} aria-hidden="true" /> Ver repositorio
+                    </a>
+                  )}
+                </span>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>

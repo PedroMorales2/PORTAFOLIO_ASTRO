@@ -1,54 +1,60 @@
-# Astro Starter Kit: Basics
+# Pedro Morales — Portafolio
 
-```sh
-npm create astro@latest -- --template basics
+Portafolio personal de **Pedro Morales Serrato**, Ingeniero de Software (Full Stack · IA · Backend · Móvil · Cloud). Reconstrucción completa v2.0 con una arquitectura de islas y una experiencia visual de nivel producto.
+
+## Stack
+
+| Capa | Tecnología |
+| --- | --- |
+| Framework | [Astro 5](https://astro.build) (SSG, arquitectura de islas) |
+| Lenguaje | TypeScript (strict) |
+| Estilos | Tailwind CSS v4 (tokens vía `@theme` en CSS) |
+| 3D | Three.js + React Three Fiber + Drei (isla React `client:only`) |
+| Animación | GSAP + ScrollTrigger, Lenis (scroll suave), Framer Motion (cursor) |
+| Iconos | Lucide |
+| Fuentes | Space Grotesk (display) · Inter (texto) · JetBrains Mono (detalles) — self-hosted vía Fontsource |
+
+## Arquitectura
+
+```
+src/
+├── data/            # Única fuente de verdad del contenido (perfil, proyectos, skills…)
+├── styles/          # global.css: design system completo (tokens, utilidades, a11y)
+├── scripts/         # app.ts: Lenis + GSAP + reveals + interacciones magnéticas
+├── layouts/         # BaseLayout.astro: SEO, OG, fuentes, cursor, scripts
+├── components/
+│   ├── ui/          # Piezas reutilizables (SectionHeading…)
+│   ├── sections/    # Hero, Sobre mí, Trayectoria, Stack, Proyectos, Filosofía, Contacto
+│   ├── three/       # HeroScene.tsx — experiencia 3D (isla React)
+│   └── interactive/ # Cursor.tsx — cursor personalizado (isla React)
+└── pages/           # index.astro, 404.astro
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+**Principios:**
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+- **Islas mínimas**: solo se hidratan la escena 3D y el cursor. Todo lo demás es HTML estático renderizado en build.
+- **Rendimiento**: fuentes self-hosted, imágenes lazy, JS diferido, DPR limitado en el canvas, render 3D pausado fuera del viewport.
+- **Accesibilidad**: HTML semántico, skip-link, navegación por teclado, `aria-*` en iconos y controles, y respeto total a `prefers-reduced-motion` (las animaciones y el 3D se desactivan).
+- **Contenido honesto**: los datos viven en `src/data/`. Lo que falta está marcado con `TODO` — nada inventado.
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+## Comandos
 
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── components/
-│   │   └── Card.astro
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
+```bash
+npm install     # instalar dependencias
+npm run dev     # servidor de desarrollo (localhost:4321)
+npm run build   # build de producción en dist/
+npm run preview # previsualizar el build
+npm run check   # chequeo de tipos con astro check
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## TODO pendientes de contenido
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+- [x] CV en PDF (`public/cv.pdf`) enlazado en el hero
+- [x] Foto de perfil en alta resolución (`src/assets/foto-perfil.png`, optimizada con astro:assets)
+- [x] Constancias y certificados oficiales en `public/docs/`, enlazados desde Trayectoria
+- [ ] Repos/demos pendientes: Recepcionista IA, CRM WhatsApp, MORA, Tinkuy (`src/data/projects.ts`)
+- [ ] Métricas pendientes: detector de fatiga, recepcionista IA, CRM WhatsApp
+- [ ] Certificación de inglés B1 y «ABC de la Interculturalidad»: institución y fechas (`src/data/certifications.ts`)
+- [ ] Reconocimientos: fecha del hackathon USAT y detalles de la tutoría par
+- [ ] Reemplazar las portadas SVG por capturas reales de cada proyecto
+- [ ] Definir el dominio final en `astro.config.ts` (`site`)

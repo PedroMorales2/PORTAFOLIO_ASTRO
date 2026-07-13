@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-label="Núcleo de asistente de voz con capas orbitales">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0c0a1a"/>
+      <stop offset="1" stop-color="#141028"/>
+    </linearGradient>
+    <radialGradient id="core" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#e4dcff"/>
+      <stop offset="0.4" stop-color="#c9b8ff"/>
+      <stop offset="1" stop-color="#c9b8ff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="halo" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#c9b8ff" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#c9b8ff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#bg)"/>
+  <circle cx="600" cy="400" r="380" fill="url(#halo)"/>
+  <!-- núcleo -->
+  <circle cx="600" cy="400" r="90" fill="url(#core)"/>
+  <circle cx="600" cy="400" r="46" fill="#0c0a1a" opacity="0.55"/>
+  <!-- las 3 capas -->
+  <g fill="none" stroke-linecap="round">
+    <ellipse cx="600" cy="400" rx="190" ry="150" stroke="#c9b8ff" stroke-opacity="0.55" stroke-width="2" transform="rotate(-18 600 400)"/>
+    <ellipse cx="600" cy="400" rx="280" ry="205" stroke="#8b9dff" stroke-opacity="0.35" stroke-width="1.5" transform="rotate(-18 600 400)" stroke-dasharray="6 10"/>
+    <ellipse cx="600" cy="400" rx="370" ry="260" stroke="#8b9dff" stroke-opacity="0.18" stroke-width="1" transform="rotate(-18 600 400)" stroke-dasharray="2 14"/>
+  </g>
+  <!-- nodos en órbita: ESP32, hub, cloud -->
+  <g transform="rotate(-18 600 400)">
+    <circle cx="790" cy="400" r="13" fill="#c9b8ff"/>
+    <circle cx="320" cy="400" r="10" fill="#8b9dff" opacity="0.85"/>
+    <circle cx="600" cy="140" r="8" fill="#8b9dff" opacity="0.5"/>
+  </g>
+  <!-- onda de voz del wake word -->
+  <g fill="#e4dcff" opacity="0.9">
+    <rect x="540" y="388" width="7" height="24" rx="3.5"/>
+    <rect x="556" y="374" width="7" height="52" rx="3.5"/>
+    <rect x="572" y="360" width="7" height="80" rx="3.5"/>
+    <rect x="588" y="348" width="7" height="104" rx="3.5"/>
+    <rect x="604" y="360" width="7" height="80" rx="3.5"/>
+    <rect x="620" y="374" width="7" height="52" rx="3.5"/>
+    <rect x="636" y="388" width="7" height="24" rx="3.5"/>
+  </g>
+  <!-- wake word -->
+  <text x="600" y="590" font-family="'JetBrains Mono',monospace" font-size="26" letter-spacing="8" text-anchor="middle" fill="#c9b8ff" opacity="0.85">«HOLA MORA»</text>
+  <!-- estrellas -->
+  <g fill="#c9b8ff">
+    <circle cx="160" cy="140" r="2" opacity="0.5"/>
+    <circle cx="1050" cy="180" r="2.5" opacity="0.4"/>
+    <circle cx="240" cy="640" r="2" opacity="0.35"/>
+    <circle cx="980" cy="620" r="2" opacity="0.5"/>
+    <circle cx="880" cy="90" r="1.5" opacity="0.6"/>
+    <circle cx="90" cy="420" r="1.5" opacity="0.4"/>
+  </g>
+</svg>

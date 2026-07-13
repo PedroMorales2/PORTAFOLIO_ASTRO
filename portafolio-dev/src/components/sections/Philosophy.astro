@@ -1,0 +1,55 @@
+---
+import SectionHeading from "@/components/ui/SectionHeading.astro";
+import { PRINCIPLES } from "@/data/philosophy";
+import {
+  Layers,
+  TrendingUp,
+  Wrench,
+  Zap,
+  Eye,
+  Shield,
+  Sparkles,
+  CheckCircle,
+} from "lucide-react";
+
+const ICONS: Record<string, typeof Layers> = {
+  layers: Layers,
+  "trending-up": TrendingUp,
+  wrench: Wrench,
+  zap: Zap,
+  eye: Eye,
+  shield: Shield,
+  sparkles: Sparkles,
+  "check-circle": CheckCircle,
+};
+---
+
+<section id="filosofia" class="relative py-28 md:py-36">
+  <div class="container-x">
+    <SectionHeading
+      eyebrow="Filosofía de ingeniería"
+      title="Principios antes que frameworks."
+      description="Las herramientas cambian cada año; los principios que sostienen un buen sistema, no."
+      align="center"
+    />
+
+    <div class="mt-16 grid gap-5 sm:grid-cols-2 lg:grid-cols-4" data-stagger>
+      {
+        PRINCIPLES.map((principle) => {
+          const Icon = ICONS[principle.icon] ?? Sparkles;
+          return (
+            <article class="card-line group flex flex-col gap-4 p-6" data-stagger-item>
+              <span class="flex size-11 items-center justify-center rounded-xl border border-line bg-panel text-accent transition-transform duration-500 group-hover:scale-110">
+                <Icon size={19} aria-hidden="true" />
+              </span>
+              <h3 class="font-display text-[1.02rem] font-bold tracking-tight">{principle.title}</h3>
+              <p class="text-[0.9rem] leading-relaxed text-muted text-pretty">
+                {principle.description}
+              </p>
+            </article>
+          );
+        })
+      }
+    </div>
+  </div>
+</section>

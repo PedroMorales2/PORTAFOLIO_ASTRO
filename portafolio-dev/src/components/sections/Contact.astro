@@ -1,0 +1,101 @@
+---
+import { PROFILE } from "@/data/profile";
+import { ArrowUpRight, Copy, MessageCircle, ReceiptText } from "lucide-react";
+---
+
+<section id="contacto" class="relative overflow-hidden py-32 md:py-44">
+  <!-- Resplandor central -->
+  <div
+    class="pointer-events-none absolute left-1/2 top-1/2 h-[500px] w-[900px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent-deep/15 blur-[160px]"
+    aria-hidden="true"
+  >
+  </div>
+  <div class="bg-grid absolute inset-0 rotate-180" aria-hidden="true"></div>
+
+  <div class="container-x relative text-center">
+    <p class="eyebrow justify-center" data-reveal>
+      <span class="inline-block h-px w-8 bg-accent/60" aria-hidden="true"></span>
+      Contacto
+      <span class="inline-block h-px w-8 bg-accent/60" aria-hidden="true"></span>
+    </p>
+
+    <h2
+      class="font-display mx-auto mt-6 max-w-3xl text-[clamp(2.4rem,7vw,5rem)] font-bold leading-[1.05] tracking-[-0.03em] text-balance"
+      data-reveal
+    >
+      ¿Construimos algo <span class="text-gradient">juntos</span>?
+    </h2>
+
+    <p class="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-muted text-pretty" data-reveal>
+      Estoy abierto a oportunidades, prácticas y proyectos donde el software y la IA generen valor real.
+      Respondo rápido.
+    </p>
+
+    <div class="mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row" data-reveal>
+      <a
+        href={`mailto:${PROFILE.email}`}
+        class="group inline-flex items-center gap-3 rounded-full bg-ink px-9 py-4.5 text-base font-semibold text-void transition-transform duration-300 hover:scale-[1.04]"
+        data-magnetic
+        data-magnetic-strength="0.3"
+      >
+        Escríbeme
+        <ArrowUpRight
+          size={19}
+          aria-hidden="true"
+          className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+        />
+      </a>
+      <a
+        href={PROFILE.whatsapp}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="glass inline-flex items-center gap-2.5 rounded-full px-7 py-4 text-[0.95rem] font-semibold text-ink transition-colors duration-300 hover:border-teal/50"
+        data-magnetic
+      >
+        <MessageCircle size={16} aria-hidden="true" className="text-teal" />
+        WhatsApp · {PROFILE.phone}
+      </a>
+      <button
+        type="button"
+        data-copy-email={PROFILE.email}
+        class="glass inline-flex items-center gap-2.5 rounded-full px-7 py-4 text-[0.95rem] font-medium text-muted transition-colors duration-300 hover:border-accent/40 hover:text-ink"
+        data-magnetic
+      >
+        <Copy size={15} aria-hidden="true" />
+        <span data-copy-label>{PROFILE.email}</span>
+      </button>
+    </div>
+
+    <p
+      class="mx-auto mt-10 inline-flex max-w-xl items-center gap-2 text-sm text-muted text-pretty"
+      data-reveal
+    >
+      <ReceiptText size={15} aria-hidden="true" className="shrink-0 text-accent" />
+      {PROFILE.freelanceNote}
+    </p>
+
+    <p class="mt-6 font-mono text-[0.7rem] uppercase tracking-[0.25em] text-faint" data-reveal>
+      {PROFILE.location} · GMT-5
+    </p>
+  </div>
+</section>
+
+<script>
+  // Copiar email al portapapeles con feedback inline
+  document.querySelectorAll<HTMLButtonElement>("[data-copy-email]").forEach((btn) => {
+    const label = btn.querySelector("[data-copy-label]");
+    const email = btn.dataset.copyEmail ?? "";
+    const original = label?.textContent ?? "";
+    btn.addEventListener("click", async () => {
+      try {
+        await navigator.clipboard.writeText(email);
+        if (label) label.textContent = "¡Copiado! ✓";
+        setTimeout(() => {
+          if (label) label.textContent = original;
+        }, 1800);
+      } catch {
+        window.location.href = `mailto:${email}`;
+      }
+    });
+  });
+</script>

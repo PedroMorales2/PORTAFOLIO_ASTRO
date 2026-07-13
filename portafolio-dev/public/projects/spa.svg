@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-label="Composición abstracta de calma y organización">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#07120f"/>
+      <stop offset="1" stop-color="#0a1a18"/>
+    </linearGradient>
+    <radialGradient id="halo" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#4be0c0" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#4be0c0" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#bg)"/>
+  <circle cx="420" cy="380" r="340" fill="url(#halo)"/>
+  <!-- ondas concéntricas -->
+  <g fill="none" stroke="#4be0c0" stroke-linecap="round">
+    <circle cx="420" cy="380" r="70" stroke-width="2.5" stroke-opacity="0.9"/>
+    <circle cx="420" cy="380" r="130" stroke-width="2" stroke-opacity="0.55"/>
+    <circle cx="420" cy="380" r="195" stroke-width="1.5" stroke-opacity="0.35"/>
+    <circle cx="420" cy="380" r="265" stroke-width="1" stroke-opacity="0.2"/>
+  </g>
+  <!-- pétalos -->
+  <g fill="#4be0c0" opacity="0.85">
+    <path d="M420 330 C400 360 400 390 420 410 C440 390 440 360 420 330 Z"/>
+    <path d="M380 370 C395 395 415 405 420 410 C412 385 400 370 380 370 Z" opacity="0.7"/>
+    <path d="M460 370 C445 395 425 405 420 410 C428 385 440 370 460 370 Z" opacity="0.7"/>
+  </g>
+  <!-- agenda / calendario -->
+  <g transform="translate(720 180)">
+    <rect width="340" height="440" rx="18" fill="#4be0c0" opacity="0.07"/>
+    <rect x="24" y="26" width="150" height="16" rx="8" fill="#9ae8d4" opacity="0.7"/>
+    <g fill="#9ae8d4">
+      <rect x="24" y="80" width="292" height="52" rx="10" opacity="0.16"/>
+      <rect x="40" y="98" width="120" height="12" rx="6" opacity="0.6"/>
+      <circle cx="292" cy="106" r="8" opacity="0.8"/>
+      <rect x="24" y="150" width="292" height="52" rx="10" opacity="0.1"/>
+      <rect x="40" y="168" width="150" height="12" rx="6" opacity="0.45"/>
+      <rect x="24" y="220" width="292" height="52" rx="10" opacity="0.16"/>
+      <rect x="40" y="238" width="100" height="12" rx="6" opacity="0.6"/>
+      <circle cx="292" cy="246" r="8" opacity="0.8"/>
+      <rect x="24" y="290" width="292" height="52" rx="10" opacity="0.1"/>
+      <rect x="40" y="308" width="135" height="12" rx="6" opacity="0.45"/>
+      <rect x="24" y="372" width="130" height="34" rx="17" opacity="0.5"/>
+    </g>
+  </g>
+  <!-- vapor -->
+  <g stroke="#9ae8d4" stroke-width="2.5" fill="none" stroke-linecap="round" opacity="0.5">
+    <path d="M300 640 C310 620 290 605 300 585 C310 565 290 550 300 530"/>
+    <path d="M360 660 C370 640 350 625 360 605 C370 585 350 570 360 550"/>
+    <path d="M420 640 C430 620 410 605 420 585 C430 565 410 550 420 530"/>
+  </g>
+</svg>

@@ -1,6 +1,9 @@
 # build output
 dist/
 
+# capturas de verificación visual
+.captures/
+
 # generated types
 .astro/
 

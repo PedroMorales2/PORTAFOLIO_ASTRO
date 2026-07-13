@@ -1,0 +1,75 @@
+---
+import "@fontsource-variable/inter";
+import "@fontsource-variable/space-grotesk";
+import "@fontsource-variable/jetbrains-mono";
+import "@/styles/global.css";
+import Navbar from "@/components/Navbar.astro";
+import Footer from "@/components/Footer.astro";
+import Cursor from "@/components/interactive/Cursor";
+import { PROFILE } from "@/data/profile";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = `${PROFILE.name} — ${PROFILE.role}`,
+  description = `${PROFILE.headline} Portafolio de ${PROFILE.fullName}: desarrollo full stack, inteligencia artificial, backend, móvil y cloud desde ${PROFILE.location}.`,
+} = Astro.props;
+
+const ogImage = new URL("/og.svg", Astro.site ?? Astro.url);
+---
+
+<!doctype html>
+<html lang="es" class="noise">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="author" content={PROFILE.fullName} />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="canonical" href={Astro.site ?? Astro.url} />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:locale" content="es_PE" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+
+    <meta name="theme-color" content="#05060b" />
+
+    <!-- Marca la presencia de JS antes del primer render para evitar FOUC -->
+    <script is:inline>
+      document.documentElement.classList.add("js");
+    </script>
+  </head>
+  <body>
+    <a
+      href="#contenido"
+      class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[200] focus:rounded-lg focus:bg-panel focus:px-4 focus:py-2 focus:text-sm"
+    >
+      Saltar al contenido
+    </a>
+
+    <Navbar />
+
+    <main id="contenido">
+      <slot />
+    </main>
+
+    <Footer />
+
+    <Cursor client:media="(pointer: fine)" />
+
+    <script>
+      import "@/scripts/app.ts";
+    </script>
+  </body>
+</html>

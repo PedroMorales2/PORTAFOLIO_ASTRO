@@ -1,13 +1,20 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import SectionExperience from "../components/section-experience.astro";
-import SectionProyecto from "../components/section-proyecto.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Hero from "@/components/sections/Hero.astro";
+import About from "@/components/sections/About.astro";
+import Experience from "@/components/sections/Experience.astro";
+import Skills from "@/components/sections/Skills.astro";
+import Projects from "@/components/sections/Projects.astro";
+import Philosophy from "@/components/sections/Philosophy.astro";
+import Contact from "@/components/sections/Contact.astro";
 ---
 
-<Layout title="Bievenido a mi PORTAFOLIO.">
-  <main class="px-4">
-    <SectionExperience />
-
-    <SectionProyecto />
-  </main>
-</Layout>
+<BaseLayout>
+  <Hero />
+  <About />
+  <Experience />
+  <Skills />
+  <Projects />
+  <Philosophy />
+  <Contact />
+</BaseLayout>

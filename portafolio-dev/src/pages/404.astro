@@ -1,0 +1,27 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { ArrowLeft } from "lucide-react";
+---
+
+<BaseLayout title="404 — Página no encontrada">
+  <section class="relative flex min-h-svh items-center overflow-hidden">
+    <div class="bg-grid absolute inset-0" aria-hidden="true"></div>
+    <div class="container-x relative z-10 text-center">
+      <p class="font-display text-gradient text-[clamp(5rem,20vw,12rem)] font-bold leading-none">404</p>
+      <h1 class="font-display mt-4 text-2xl font-bold tracking-tight md:text-3xl">
+        Esta página no existe.
+      </h1>
+      <p class="mx-auto mt-4 max-w-md text-muted">
+        El enlace puede estar roto o la página fue movida. Volvamos a un lugar seguro.
+      </p>
+      <a
+        href="/"
+        class="mt-10 inline-flex items-center gap-2.5 rounded-full bg-ink px-7 py-3.5 font-semibold text-void transition-transform duration-300 hover:scale-[1.04]"
+        data-magnetic
+      >
+        <ArrowLeft size={17} aria-hidden="true" />
+        Volver al inicio
+      </a>
+    </div>
+  </section>
+</BaseLayout>

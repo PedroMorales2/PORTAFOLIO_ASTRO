@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-label="Ondas de voz procesadas por inteligencia artificial">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#081018"/>
+      <stop offset="1" stop-color="#0a1526"/>
+    </linearGradient>
+    <linearGradient id="bar" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#5cdfff"/>
+      <stop offset="1" stop-color="#8b9dff"/>
+    </linearGradient>
+    <radialGradient id="halo" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#5cdfff" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#5cdfff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#bg)"/>
+  <circle cx="600" cy="400" r="330" fill="url(#halo)"/>
+  <!-- anillos concéntricos -->
+  <g fill="none" stroke="#5cdfff" stroke-opacity="0.18">
+    <circle cx="600" cy="400" r="180" stroke-width="1.5"/>
+    <circle cx="600" cy="400" r="250" stroke-width="1" stroke-dasharray="3 9"/>
+    <circle cx="600" cy="400" r="320" stroke-width="1" stroke-dasharray="2 12"/>
+  </g>
+  <!-- barras de forma de onda -->
+  <g fill="url(#bar)" opacity="0.95">
+    <rect x="360" y="370" width="14" height="60" rx="7"/>
+    <rect x="396" y="340" width="14" height="120" rx="7"/>
+    <rect x="432" y="300" width="14" height="200" rx="7"/>
+    <rect x="468" y="350" width="14" height="100" rx="7"/>
+    <rect x="504" y="270" width="14" height="260" rx="7"/>
+    <rect x="540" y="230" width="14" height="340" rx="7"/>
+    <rect x="576" y="310" width="14" height="180" rx="7"/>
+    <rect x="612" y="200" width="14" height="400" rx="7"/>
+    <rect x="648" y="290" width="14" height="220" rx="7"/>
+    <rect x="684" y="250" width="14" height="300" rx="7"/>
+    <rect x="720" y="330" width="14" height="140" rx="7"/>
+    <rect x="756" y="290" width="14" height="220" rx="7"/>
+    <rect x="792" y="360" width="14" height="80" rx="7"/>
+    <rect x="828" y="380" width="14" height="40" rx="7"/>
+  </g>
+  <!-- nodos de flujo (n8n) -->
+  <g stroke="#8b9dff" stroke-opacity="0.4" fill="none" stroke-width="1.5">
+    <path d="M160 640 H380 L450 700 H640"/>
+    <path d="M640 700 H820 L890 640 H1060"/>
+  </g>
+  <g fill="#0a1526" stroke="#8b9dff" stroke-width="2">
+    <circle cx="160" cy="640" r="10"/>
+    <circle cx="450" cy="700" r="10"/>
+    <circle cx="820" cy="700" r="10"/>
+    <circle cx="1060" cy="640" r="10"/>
+  </g>
+  <g fill="#4be0c0">
+    <circle cx="640" cy="700" r="6"/>
+  </g>
+  <!-- teléfono -->
+  <g transform="translate(180 140)" stroke="#5cdfff" stroke-width="3" fill="none" stroke-linecap="round">
+    <path d="M0 18 C10 -6 34 -6 44 10 L36 26 C42 44 58 60 76 66 L92 58 C108 68 108 92 84 102 C40 96 -8 52 0 18 Z"/>
+  </g>
+</svg>

@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-label="Composición editorial abstracta para firma legal">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0c0a18"/>
+      <stop offset="1" stop-color="#131024"/>
+    </linearGradient>
+    <linearGradient id="col" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#c9b8ff"/>
+      <stop offset="1" stop-color="#8b9dff"/>
+    </linearGradient>
+    <radialGradient id="halo" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#c9b8ff" stop-opacity="0.28"/>
+      <stop offset="1" stop-color="#c9b8ff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#bg)"/>
+  <circle cx="880" cy="240" r="320" fill="url(#halo)"/>
+  <!-- columnas clásicas abstractas -->
+  <g fill="url(#col)" opacity="0.9">
+    <rect x="150" y="240" width="26" height="340" rx="13"/>
+    <rect x="230" y="200" width="26" height="380" rx="13"/>
+    <rect x="310" y="240" width="26" height="340" rx="13"/>
+  </g>
+  <rect x="120" y="170" width="250" height="16" rx="8" fill="#c9b8ff" opacity="0.85"/>
+  <rect x="140" y="600" width="210" height="16" rx="8" fill="#c9b8ff" opacity="0.6"/>
+  <!-- bloques editoriales (CMS) -->
+  <g>
+    <rect x="520" y="180" width="540" height="70" rx="12" fill="#c9b8ff" opacity="0.14"/>
+    <rect x="545" y="205" width="300" height="20" rx="10" fill="#c9b8ff" opacity="0.75"/>
+    <rect x="520" y="290" width="540" height="200" rx="12" fill="#8b9dff" opacity="0.08"/>
+    <rect x="545" y="320" width="480" height="12" rx="6" fill="#9aa4c8" opacity="0.55"/>
+    <rect x="545" y="350" width="440" height="12" rx="6" fill="#9aa4c8" opacity="0.45"/>
+    <rect x="545" y="380" width="470" height="12" rx="6" fill="#9aa4c8" opacity="0.45"/>
+    <rect x="545" y="410" width="320" height="12" rx="6" fill="#9aa4c8" opacity="0.35"/>
+    <rect x="545" y="452" width="120" height="26" rx="13" fill="#c9b8ff" opacity="0.5"/>
+    <rect x="520" y="530" width="255" height="120" rx="12" fill="#8b9dff" opacity="0.1"/>
+    <rect x="805" y="530" width="255" height="120" rx="12" fill="#8b9dff" opacity="0.1"/>
+    <rect x="545" y="560" width="160" height="12" rx="6" fill="#9aa4c8" opacity="0.5"/>
+    <rect x="830" y="560" width="160" height="12" rx="6" fill="#9aa4c8" opacity="0.5"/>
+    <rect x="545" y="590" width="120" height="12" rx="6" fill="#9aa4c8" opacity="0.35"/>
+    <rect x="830" y="590" width="120" height="12" rx="6" fill="#9aa4c8" opacity="0.35"/>
+  </g>
+  <!-- balanza minimalista -->
+  <g stroke="#c9b8ff" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.9">
+    <path d="M245 640 V700 M205 700 H285"/>
+    <path d="M245 640 L185 660 M245 640 L305 660"/>
+    <path d="M165 660 Q185 690 205 660 M285 660 Q305 690 325 660"/>
+  </g>
+</svg>

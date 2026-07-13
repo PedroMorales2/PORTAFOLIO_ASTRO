@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-label="Malla facial con landmarks y monitoreo ocular">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#141005"/>
+      <stop offset="1" stop-color="#1c1608"/>
+    </linearGradient>
+    <radialGradient id="halo" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#ffd479" stop-opacity="0.25"/>
+      <stop offset="1" stop-color="#ffd479" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#bg)"/>
+  <circle cx="520" cy="400" r="360" fill="url(#halo)"/>
+  <!-- contorno de rostro (malla) -->
+  <g stroke="#ffd479" stroke-opacity="0.5" stroke-width="1.5" fill="none">
+    <path d="M520 160 C640 160 700 260 700 380 C700 520 630 640 520 640 C410 640 340 520 340 380 C340 260 400 160 520 160 Z"/>
+    <path d="M400 340 L470 320 L520 340 L570 320 L640 340"/>
+    <path d="M430 470 C470 510 570 510 610 470"/>
+    <path d="M520 340 L505 430 L520 445 L535 430 Z"/>
+    <path d="M400 340 L430 470 M640 340 L610 470 M470 320 L505 430 M570 320 L535 430"/>
+  </g>
+  <!-- landmarks -->
+  <g fill="#ffd479">
+    <circle cx="400" cy="340" r="4"/><circle cx="470" cy="320" r="4"/><circle cx="520" cy="340" r="4"/>
+    <circle cx="570" cy="320" r="4"/><circle cx="640" cy="340" r="4"/>
+    <circle cx="430" cy="470" r="4"/><circle cx="610" cy="470" r="4"/>
+    <circle cx="505" cy="430" r="3"/><circle cx="535" cy="430" r="3"/>
+    <circle cx="520" cy="160" r="3"/><circle cx="520" cy="640" r="3"/>
+    <circle cx="340" cy="380" r="3"/><circle cx="700" cy="380" r="3"/>
+  </g>
+  <!-- ojos monitoreados -->
+  <g>
+    <ellipse cx="450" cy="385" rx="34" ry="16" fill="none" stroke="#ffd479" stroke-width="2.5"/>
+    <circle cx="450" cy="385" r="7" fill="#ffd479"/>
+    <ellipse cx="590" cy="385" rx="34" ry="9" fill="none" stroke="#ff9d5c" stroke-width="2.5"/>
+    <line x1="556" y1="385" x2="624" y2="385" stroke="#ff9d5c" stroke-width="2" opacity="0.6"/>
+  </g>
+  <!-- recuadro de tracking -->
+  <g stroke="#ffd479" stroke-width="2" fill="none" opacity="0.8">
+    <path d="M300 130 h50 M300 130 v50"/>
+    <path d="M740 130 h-50 M740 130 v50"/>
+    <path d="M300 670 h50 M300 670 v-50"/>
+    <path d="M740 670 h-50 M740 670 v-50"/>
+  </g>
+  <!-- panel de señal -->
+  <g transform="translate(820 240)">
+    <rect width="280" height="320" rx="16" fill="#ffd479" opacity="0.07"/>
+    <text x="24" y="42" font-family="'JetBrains Mono',monospace" font-size="15" letter-spacing="3" fill="#ffd479" opacity="0.8">EAR · PERCLOS</text>
+    <polyline points="24,140 60,120 90,150 120,110 150,160 180,100 210,190 256,170" fill="none" stroke="#ffd479" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="24" y1="185" x2="256" y2="185" stroke="#ff9d5c" stroke-width="1.5" stroke-dasharray="5 6" opacity="0.7"/>
+    <rect x="24" y="240" width="130" height="34" rx="17" fill="#ff9d5c" opacity="0.25"/>
+    <text x="42" y="263" font-family="'JetBrains Mono',monospace" font-size="15" fill="#ffb98a">ALERTA</text>
+  </g>
+</svg>

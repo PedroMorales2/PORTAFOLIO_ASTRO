@@ -1,0 +1,98 @@
+---
+import { Image } from "astro:assets";
+import SectionHeading from "@/components/ui/SectionHeading.astro";
+import { PROFILE } from "@/data/profile";
+import { MapPin, GraduationCap, Sparkles, Languages } from "lucide-react";
+import fotoPerfil from "@/assets/foto-perfil.png";
+
+const FACTS = [
+  { icon: MapPin, label: "Ubicación", value: PROFILE.location },
+  { icon: GraduationCap, label: "Formación", value: "Ing. de Sistemas — USAT · Egreso 2026" },
+  { icon: Sparkles, label: "Enfoque", value: "IA aplicada · Full Stack · Móvil" },
+  { icon: Languages, label: "Idiomas", value: "Español nativo · Inglés B1" },
+];
+---
+
+<section id="sobre-mi" class="relative py-28 md:py-36">
+  <div class="container-x">
+    <SectionHeading
+      eyebrow="Sobre mí"
+      title="Ingeniería para resolver problemas reales."
+    />
+
+    <div class="mt-16 grid items-start gap-12 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:gap-20">
+      <!-- Retrato -->
+      <div class="relative mx-auto w-full max-w-sm lg:mx-0" data-reveal="left">
+        <div
+          class="absolute -inset-4 rounded-[2rem] bg-gradient-to-br from-accent/25 via-transparent to-cyan/20 blur-2xl"
+          aria-hidden="true"
+        >
+        </div>
+        <figure class="card-line relative overflow-hidden rounded-[1.75rem] p-2">
+          <Image
+            src={fotoPerfil}
+            alt={`Retrato de ${PROFILE.fullName}`}
+            width={640}
+            densities={[1, 2]}
+            format="webp"
+            quality={82}
+            loading="lazy"
+            class="aspect-[4/5] w-full rounded-[1.35rem] object-cover object-top"
+          />
+          <figcaption
+            class="glass absolute bottom-5 left-5 right-5 flex items-center justify-between rounded-xl px-4 py-3"
+          >
+            <span class="text-sm font-semibold text-ink">{PROFILE.name}</span>
+            <span class="font-mono text-[0.68rem] uppercase tracking-widest text-accent">
+              {PROFILE.role}
+            </span>
+          </figcaption>
+        </figure>
+      </div>
+
+      <!-- Historia -->
+      <div class="space-y-6">
+        <p class="text-xl leading-relaxed text-muted text-pretty" data-reveal>
+          Estudio <span class="font-medium text-ink">Ingeniería de Sistemas y Computación</span> en la
+          USAT (egreso 2026), pero mi verdadera escuela han sido los problemas reales: mi tesis nació de
+          un sistema que construí para la Municipalidad de Reque durante mis prácticas, y hoy predice
+          zonas de riesgo con <span class="font-medium text-ink">LSTM y DBSCAN</span> sobre reportes
+          ciudadanos georreferenciados.
+        </p>
+        <p class="text-lg leading-relaxed text-muted text-pretty" data-reveal>
+          Trabajo de extremo a extremo — del modelo de datos a la interfaz — y también con clientes
+          reales como <span class="font-medium text-ink">independiente formal</span>: sistemas de gestión
+          en producción, automatización con IA y soporte en procesos tan exigentes como las elecciones
+          nacionales con la ONPE. Me obsesiona que el software no solo funcione, sino que
+          <span class="font-medium text-ink">escale, se mantenga y se entienda</span>.
+        </p>
+        <p class="text-lg leading-relaxed text-muted text-pretty" data-reveal>
+          Mi inspiración es el concepto <span class="font-medium text-ink">JARVIS</span> de Iron Man:
+          por eso construyo <span class="font-medium text-ink">MORA</span>, mi asistente personal de IA
+          local. El <span class="font-medium text-ink">aprendizaje continuo</span> es mi único plan de
+          carrera, con la comunicación, el trabajo en equipo y el liderazgo como herramientas tan
+          importantes como el código.
+        </p>
+
+        <!-- Datos rápidos -->
+        <div class="grid gap-3 pt-4 sm:grid-cols-2" data-stagger>
+          {
+            FACTS.map((fact) => (
+              <div class="card-line flex items-center gap-4 px-5 py-4" data-stagger-item>
+                <span class="flex size-10 shrink-0 items-center justify-center rounded-full border border-line text-accent">
+                  <fact.icon size={17} aria-hidden="true" />
+                </span>
+                <span class="min-w-0">
+                  <span class="block font-mono text-[0.62rem] uppercase tracking-[0.2em] text-faint">
+                    {fact.label}
+                  </span>
+                  <span class="block truncate text-[0.92rem] font-medium text-ink">{fact.value}</span>
+                </span>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

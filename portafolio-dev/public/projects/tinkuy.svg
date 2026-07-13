@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-label="Cancha deportiva con pin de reserva">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#07130a"/>
+      <stop offset="1" stop-color="#0b1d10"/>
+    </linearGradient>
+    <radialGradient id="halo" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#7ee787" stop-opacity="0.28"/>
+      <stop offset="1" stop-color="#7ee787" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#bg)"/>
+  <circle cx="600" cy="420" r="380" fill="url(#halo)"/>
+  <!-- cancha en perspectiva -->
+  <g stroke="#7ee787" stroke-width="2.5" fill="none" stroke-opacity="0.75">
+    <path d="M330 620 L470 240 L730 240 L870 620 Z"/>
+    <path d="M600 240 V620"/>
+    <ellipse cx="600" cy="430" rx="90" ry="42"/>
+    <path d="M500 620 L540 520 H660 L700 620"/>
+    <path d="M520 240 L540 300 H660 L680 240"/>
+  </g>
+  <!-- pin de reserva -->
+  <g transform="translate(600 330)">
+    <path d="M0 -96 C-42 -96 -68 -66 -68 -34 C-68 8 0 66 0 66 C0 66 68 8 68 -34 C68 -66 42 -96 0 -96 Z" fill="#7ee787"/>
+    <circle cx="0" cy="-36" r="26" fill="#07130a"/>
+    <path d="M-9 -36 l7 7 14 -16" stroke="#7ee787" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <!-- tarjeta de reserva -->
+  <g transform="translate(830 140)">
+    <rect width="290" height="150" rx="16" fill="#7ee787" opacity="0.1"/>
+    <rect x="22" y="24" width="150" height="14" rx="7" fill="#b8f5bc" opacity="0.75"/>
+    <rect x="22" y="52" width="110" height="11" rx="5.5" fill="#b8f5bc" opacity="0.4"/>
+    <rect x="22" y="94" width="120" height="34" rx="17" fill="#7ee787" opacity="0.55"/>
+    <text x="46" y="117" font-family="'JetBrains Mono',monospace" font-size="14" fill="#07130a" font-weight="700">RESERVAR</text>
+  </g>
+  <!-- horarios -->
+  <g transform="translate(90 520)" font-family="'JetBrains Mono',monospace" font-size="14">
+    <rect width="120" height="36" rx="18" fill="#7ee787" opacity="0.14"/>
+    <text x="24" y="24" fill="#b8f5bc">18:00 ✓</text>
+    <rect y="48" width="120" height="36" rx="18" fill="#7ee787" opacity="0.14"/>
+    <text x="24" y="72" fill="#b8f5bc">19:00 ✓</text>
+    <rect y="96" width="120" height="36" rx="18" fill="#7ee787" opacity="0.05"/>
+    <text x="24" y="120" fill="#5d6474">20:00 ×</text>
+  </g>
+  <!-- balón -->
+  <g transform="translate(430 660)">
+    <circle r="26" fill="none" stroke="#b8f5bc" stroke-width="2.5"/>
+    <path d="M0 -26 C10 -16 10 16 0 26 M-26 0 C-14 -8 14 -8 26 0" stroke="#b8f5bc" stroke-width="2" fill="none" opacity="0.7"/>
+  </g>
+</svg>
